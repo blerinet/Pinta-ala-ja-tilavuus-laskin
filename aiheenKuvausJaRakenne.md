@@ -1,0 +1,1 @@
+Ideani todennäköisesti muokkautuu matkan varrella, mutta lähtökohtaisesti lähden luomaan laskinta, joka laskee suoran ympyräKartion ja -lieriön(ehkä myöskin neliöpohjaisen kartion ja lieriön) pinta-alan sekä tilavuuden, kun laskimeen syötetään pohjan säde(tai kanta) sekä kartion/lieriön korkeus.
