@@ -1,7 +1,7 @@
-
 package fi.blerine.logiikka;
 
 public class YmpyralierioLogiikka {
+
     private double sade;
     private double korkeus;
 
@@ -11,27 +11,27 @@ public class YmpyralierioLogiikka {
     }
 
     public double getKorkeus() {
-        return korkeus;
+        return this.korkeus;
     }
 
     public double getSade() {
-        return sade;
+        return this.sade;
     }
-    
+
     public double pohjanAla() {
-        return Math.PI*Math.pow(sade, 2);
+        return Math.PI * Math.pow(sade, 2);
     }
-    
+
     public double vaipanAla() {
-        return 2*Math.PI*sade*korkeus;
+        return 2 * Math.PI * sade * korkeus;
     }
-    
+
     public double pintaAla() {
-        return this.vaipanAla() + (2*this.pohjanAla());
+        return this.vaipanAla() + (2 * this.pohjanAla());
     }
-    
+
     public double tilavuus() {
-        return korkeus*this.pohjanAla();
+        return korkeus * this.pohjanAla();
     }
-    
+
 }

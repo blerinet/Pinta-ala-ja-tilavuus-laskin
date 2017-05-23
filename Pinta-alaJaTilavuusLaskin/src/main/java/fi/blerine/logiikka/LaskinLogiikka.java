@@ -12,6 +12,18 @@ public class LaskinLogiikka {
         this.korkeus = korkeus;
     }
 
+    public String getKappale() {
+        return kappale;
+    }
+
+    public double getKorkeus() {
+        return korkeus;
+    }
+
+    public double getSade() {
+        return sade;
+    }
+
     public void pintaAla() {
         if (kappale == "lieriö") {
             lierioPintaAla();
