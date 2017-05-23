@@ -9,3 +9,4 @@ Laskimen ulkonäöstä tai miten sen loppujen lopuksi toteutan en ole vielä pä
 - Säteen ja korkeuden syöttäminen
 
 ![Luokkakaavio](Pinta-ala-ja-tilavuus-laskin/Dokumentaatiot/luokkakaavio.png)
+
