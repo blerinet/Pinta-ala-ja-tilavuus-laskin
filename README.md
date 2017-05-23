@@ -4,6 +4,6 @@ Projektini aiheena on laskin, joka laskee suoran ympyrälieriön ja ympyräkarti
 
 ## Dokumentaatio
 
-[Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
+[Aiheen kuvaus](Dokumentaatiot/aiheenKuvausJaRakenne.md)
 
-[Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+[Tuntikirjanpito](Dokumentaatiot/tuntikirjanpito.md)
