@@ -9,6 +9,7 @@ Laskimen ulkonäöstä tai miten sen loppujen lopuksi toteutan en ole vielä pä
 - Säteen ja korkeuden syöttäminen
 
 
-###Luokkakaavio
+### Luokkakaavio
+
 ![Luokkakaavio](luokkakaavio.png)
 
