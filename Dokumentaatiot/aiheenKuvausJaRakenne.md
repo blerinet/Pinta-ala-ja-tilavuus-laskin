@@ -8,4 +8,4 @@ Laskimen ulkonäöstä tai miten sen loppujen lopuksi toteutan en ole vielä pä
 - Kappaleen muodon valitseminen (Kartio/Lieriö)
 - Säteen ja korkeuden syöttäminen
 
-![Luokkakaavio](Dokumentaatiot/luokkakaavio.png)
+![Luokkakaavio](Pinta-ala-ja-tilavuus-laskin/Dokumentaatiot/luokkakaavio.png)
