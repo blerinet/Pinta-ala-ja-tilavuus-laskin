@@ -1,6 +1,6 @@
-package fi.blerine;
+package fi.blerine.laskin;
 
-import fi.blerine.logiikka.*;
+import fi.blerine.laskin.logiikka.YmpyralierioLogiikka;
 import java.util.Scanner;
 
 public class Main {

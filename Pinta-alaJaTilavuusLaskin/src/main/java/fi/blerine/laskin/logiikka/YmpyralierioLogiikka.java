@@ -1,4 +1,4 @@
-package fi.blerine.logiikka;
+package fi.blerine.laskin.logiikka;
 
 public class YmpyralierioLogiikka {
 

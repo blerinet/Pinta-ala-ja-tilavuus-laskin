@@ -1,5 +1,6 @@
-package fi.blerine.logiikka;
+package fi.blerine.laskin.logiikka;
 
+import fi.blerine.laskin.logiikka.YmpyralierioLogiikka;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
