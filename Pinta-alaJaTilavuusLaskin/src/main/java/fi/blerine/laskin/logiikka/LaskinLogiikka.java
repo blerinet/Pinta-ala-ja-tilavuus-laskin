@@ -24,26 +24,30 @@ public class LaskinLogiikka {
         return sade;
     }
 
-    public void pintaAla() {
+    public String pintaAla() {
         if (kappale == "lieriö") {
-            lierioPintaAla();
+            double lierioAla = lierioPintaAla();
+            return "Pinta-ala on " + lierioAla + " neliösenttimetriä.";
         }
         if (kappale == "kartio") {
-            kartioPintaAla();
-        } else {
-            System.out.println("Kappaleen täytyy olla joko lieriö tai kartio");
+            double kartioAla = kartioPintaAla();
+            return "Pinta-ala on " + kartioAla + " neliösenttimetriä.";
         }
+        return "Kappaleen täytyy olla joko lieriö tai kartio";
+
     }
 
-    public void tilavuus() {
+    public String tilavuus() {
         if (kappale == "lieriö") {
-            lierioTilavuus();
+            double tilavuus = lierioTilavuus();
+            return "Tilavuus on " + tilavuus + " kuutiosenttimetriä";
         }
         if (kappale == "kartio") {
-            kartioTilavuus();
-        } else {
-            System.out.println("Kappaleen täytyy olla joko lieriö tai kartio");
+            double tilavuus = kartioTilavuus();
+            return "Tilavuus on " + tilavuus + " kuutiosenttimetriä";
         }
+        return "Kappaleen täytyy olla joko lieriö tai kartio";
+
     }
 
     public double lierioPintaAla() {
