@@ -6,7 +6,8 @@ Laskimen ulkonäöstä tai miten sen loppujen lopuksi toteutan en ole vielä pä
 
 **Käyttäjien toiminnot:**
 - Kappaleen muodon valitseminen (Kartio/Lieriö)
-- Säteen ja korkeuden syöttäminen
+- Pohjan muodon valitseminen (Ympyrä/Neliö)
+- Säteen/kannan ja korkeuden syöttäminen
 
 
 ### Luokkakaavio
