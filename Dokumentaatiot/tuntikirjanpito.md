@@ -5,3 +5,5 @@ Päivä | Tunnit | Kuvaus
 23.05.2017 | 2,5h | Projektin ohjelmalogiikan tekemistä
 23.05.2017 | 5h | Testien tekemistä, Pit ja checkstyle raporttien generoimista ja luokkakaavion tekeminen sekä sen lisääminen GitHubiin
 25.05.2017 | 0,5h | Projektin ohjelmalogiikan muokkaamista sekä pit ja checkstyle raportin generoimista
+30.05.2017 | 2,5h | Suunnitelman laajentamista, Projektin ohjelmalogiikan kehittämistä edelleen, uusien testien luomista ja Netbeans-projektin luokkien nimeämistä ja järjestelemistä uudelleen
+
