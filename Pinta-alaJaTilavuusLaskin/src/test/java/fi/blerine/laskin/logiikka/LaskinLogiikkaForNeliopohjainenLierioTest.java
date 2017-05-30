@@ -1,6 +1,5 @@
 package fi.blerine.laskin.logiikka;
 
-import fi.blerine.laskin.logiikka.LaskinLogiikka;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -8,11 +7,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LaskinLogiikkaForYmpyralierioTest {
+public class LaskinLogiikkaForNeliopohjainenLierioTest {
 
     private LaskinLogiikka laskin;
 
-    public LaskinLogiikkaForYmpyralierioTest() {
+    public LaskinLogiikkaForNeliopohjainenLierioTest() {
     }
 
     @BeforeClass
@@ -25,7 +24,7 @@ public class LaskinLogiikkaForYmpyralierioTest {
 
     @Before
     public void setUp() {
-        this.laskin = new LaskinLogiikka("lieriö", "ympyrä", 3, 4);
+        this.laskin = new LaskinLogiikka("lieriö", "neliö", 2, 4);
     }
 
     @After
@@ -39,12 +38,12 @@ public class LaskinLogiikkaForYmpyralierioTest {
 
     @Test
     public void konstruktoriAsettaaOikeanPohjanMuodon() {
-        assertEquals("ympyrä", laskin.getPohjanMuoto());
+        assertEquals("neliö", laskin.getPohjanMuoto());
     }
 
     @Test
-    public void konstruktoriAsettaaSateenOikein() {
-        assertEquals(3.0, laskin.getSade(), 1);
+    public void konstruktoriAsettaaKannanOikein() {
+        assertEquals(2.0, laskin.getSade(), 1);
     }
 
     @Test
@@ -53,45 +52,45 @@ public class LaskinLogiikkaForYmpyralierioTest {
     }
 
     @Test
-    public void pintaAlaOikeinKunKyseessaYmpyralierio() {
-        assertEquals(131.9468914507, laskin.ympyralierioPintaAla(), 1);
+    public void pintaAlaOikeinKunKyseessaNeliopohjainenLierio() {
+        assertEquals(40.0, laskin.nelioPohjainenLierioPintaAla(), 1);
     }
 
     @Test
-    public void tilavuusOikeinKunKyseessaYmpyralierio() {
-        assertEquals(113.0973355292, laskin.ympyralierioTilavuus(), 1);
+    public void tilavuusOikeinKunKyseessaNeliopohjainenLierio() {
+        assertEquals(16.0, laskin.nelioPohjainenLierioTilavuus(), 1);
     }
 
     @Test
-    public void pintaAlaMetodiToimiiOikeinKunKyseessaYmpyralierio() {
-        assertEquals("Pinta-ala on 131.94689145077132 neliösenttimetriä.", laskin.pintaAla());
+    public void pintaAlaMetodiToimiiOikeinKunKyseessaNeliopohjainenLierio() {
+        assertEquals("Pinta-ala on 40.0 neliösenttimetriä.", laskin.pintaAla());
     }
 
     @Test
-    public void tilavuusMetodiToimiiOikeinKunKyseessaYmpyralierio() {
-        assertEquals("Tilavuus on 113.09733552923255 kuutiosenttimetriä.", laskin.tilavuus());
+    public void tilavuusMetodiToimiiOikeinKunKyseessaNeliopohjainenLierio() {
+        assertEquals("Tilavuus on 16.0 kuutiosenttimetriä.", laskin.tilavuus());
     }
 
     @Test
     public void pintaAlaMetodiEiToimiJosKappaleEiOleLierio() {
-        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "ympyrä", 3, 4);
+        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "neliö", 2, 4);
         assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.pintaAla());
     }
 
     @Test
     public void tilavuusMetodiEiToimiJosKappaleEiOleLierio() {
-        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "ympyrä", 3, 4);
+        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "neliö", 2, 4);
         assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.tilavuus());
     }
 
     @Test
-    public void pintaAlaMetodiEiToimiJosPohjanMuotoEiOleYmpyra() {
+    public void pintaAlaMetodiEiToimiJosPohjanMuotoEiOleNelio() {
         LaskinLogiikka laskin = new LaskinLogiikka("lieriö", "fjkfkf", 3, 4);
         assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.pintaAla());
     }
 
     @Test
-    public void tilavuusMetodiEiToimiJosPohjanMuotoEiOleYmpyra() {
+    public void tilavuusMetodiEiToimiJosPohjanMuotoEiOleNelio() {
         LaskinLogiikka laskin = new LaskinLogiikka("lieriö", "fjkfkf", 3, 4);
         assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.tilavuus());
     }
