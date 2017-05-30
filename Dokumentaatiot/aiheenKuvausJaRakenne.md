@@ -1,6 +1,4 @@
-**Aihe:** Lähden luomaan laskinta, joka laskee suoran ympyräkartion ja -lieriön sekä myöskin neliöpohjaisen kartion(eli pyramidin) ja lieriön pinta-alan sekä tilavuuden, kun laskimeen syötetään pohjan säde tai kanta sekä kartion/lieriön korkeus. 
-
-Laskimen ulkonäöstä tai miten sen loppujen lopuksi toteutan en ole vielä päättänyt mitään tarkempaa, lähden sitten fiiliksen mukaan toteuttamaan sellaista ohjelmaa joka tuntuu hyvältä.
+**Aihe:** Projektini aiheena on laskin, joka laskee suoran ympyrälieriön ja ympyräkartion sekä neliöpohjaisen lieriön ja kartion(eli pyramidin) pinta-alan ja tilavuuden. Käyttäjä valitsee ensin haluaako laskea lieriön vai kartion pinta-alan/tilavuuden, sitten käyttäjä valitsee pohjan muodon, onko se ympyrä vai neliö ja tämän jälkeen syöttää tarvittavat tiedot, eli pohjan säteen tai kannan ja kappaleen korkeuden.
 
 **Käyttäjät:** Kaikki 
 
