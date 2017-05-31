@@ -7,5 +7,5 @@ Projektini aiheena on laskin, joka laskee suoran ympyrälieriön ja ympyräkarti
 - [Aiheen kuvaus](Dokumentaatiot/aiheenKuvausJaRakenne.md)
 - [Tuntikirjanpito](Dokumentaatiot/tuntikirjanpito.md)
 - [Pit-raportti](https://htmlpreview.github.io/?https://github.com/blerinet/Pinta-ala-ja-tilavuus-laskin/master/Dokumentaatiot/pit/index.html)
-- [Checkstyle-raportti](Dokumentaatiot/checkstyle)
+- [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/blerinet/Pinta-ala-ja-tilavuus-laskin/master/Dokumentaatiot/checkstyle/checkstyle.html)
 - [Luokkakaavio](Dokumentaatiot/luokkakaavio.png)
