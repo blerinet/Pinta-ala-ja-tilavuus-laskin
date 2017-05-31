@@ -8,21 +8,22 @@
 <div id="overview"><a href="../../../../apidocs/fi/blerine/laskin/Main.html">View Javadoc</a></div><pre>
 <a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> fi.blerine.laskin;
 <a class="jxr_linenumber" name="L2" href="#L2">2</a>   
-<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> fi.blerine.laskin.logiikka.LaskinLogiikka;
-<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> fi.blerine.laskin.logiikka.YmpyralierioLogiikka;
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> fi.blerine.laskin.logiikka.*;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> fi.blerine.laskin.kayttoliittyma.*;
 <a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> java.util.Scanner;
-<a class="jxr_linenumber" name="L6" href="#L6">6</a>   
-<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../fi/blerine/laskin/Main.html">Main</a> {
-<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>       <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Scanner lukija = <strong class="jxr_keyword">new</strong> Scanner(System.in);
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>  
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) {
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>          <a href="../../../fi/blerine/laskin/logiikka/LaskinLogiikka.html">LaskinLogiikka</a> laskin = <strong class="jxr_keyword">new</strong> <a href="../../../fi/blerine/laskin/logiikka/LaskinLogiikka.html">LaskinLogiikka</a>(<span class="jxr_string">"lieriö"</span>, 3, 4);
-<a class="jxr_linenumber" name="L13" href="#L13">13</a>          System.out.println(laskin.pintaAla());
-<a class="jxr_linenumber" name="L14" href="#L14">14</a>          System.out.println(laskin.tilavuus());
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>      }
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>  
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>  }
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> javax.swing.SwingUtilities;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../fi/blerine/laskin/Main.html">Main</a> {
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Scanner lukija = <strong class="jxr_keyword">new</strong> Scanner(System.in);
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) {
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>          <a href="../../../fi/blerine/laskin/kayttoliittyma/Kayttoliittyma.html">Kayttoliittyma</a> kayttoliittyma = <strong class="jxr_keyword">new</strong> <a href="../../../fi/blerine/laskin/kayttoliittyma/Kayttoliittyma.html">Kayttoliittyma</a>();
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>          SwingUtilities.invokeLater(kayttoliittyma);
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>      }
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2017. All rights reserved.</div>
