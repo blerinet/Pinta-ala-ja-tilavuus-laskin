@@ -8,3 +8,4 @@ Päivä | Tunnit | Kuvaus
 30.05.2017 | 2,5h | Suunnitelman laajentamista, projektin ohjelmalogiikan kehittämistä edelleen, uusien testien luomista ja Netbeans-projektin luokkien nimeämistä ja järjestelemistä uudelleen
 30.05.2017 | 2h | Uusien testiluokkien ja testien toteuttamista, käyttöliittymän luomisen harjoittelemista(OhJa:n ohjeiden mukaan) ja oman käyttöliittymän tekemisen aloittaminen
 31.05.2017 | 1h | Käyttöliittymäluokan muokkaamista, checkstyle raportin muokkamista niin, että käyttöliittymäluokkia ei oteta mukaan, luokkakaavion päivittämistä sekä pit ja checkstyle raporttien generointi ja niiden linkkaaminen README-osioon
+09.06.2017 | 5h | Päivittänyt projektin logiikka-osuutta, muokannut testejä, päivittänyt käyttöliittymää sekä luonut tapahtumien käsittelijän, JavaDoc:n aloittaminen sekä pit ja checkstyle raportin generoiminen.
