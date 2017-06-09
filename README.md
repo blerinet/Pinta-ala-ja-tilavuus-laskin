@@ -1,6 +1,7 @@
 # Pinta-ala ja tilavuus laskin
 
-Projektini aiheena on laskin, joka laskee suoran ympyrälieriön ja ympyräkartion sekä neliöpohjaisen lieriön ja kartion(eli pyramidin) pinta-alan ja tilavuuden. Käyttäjä valitsee ensin haluaako laskea lieriön vai kartion pinta-alan/tilavuuden, sitten käyttäjä valitsee pohjan muodon, onko se ympyrä vai neliö ja tämän jälkeen syöttää tarvittavat tiedot, eli pohjan säteen tai kannan ja kappaleen korkeuden. 
+Projektini aiheena on laskin, joka laskee suoran ympyrälieriön ja ympyräkartion sekä neliöpohjaisen lieriön ja kartion(eli pyramidin) pinta-alan ja tilavuuden. Käyttäjä syöttää aluksi haluamansa kappaleen säteen/kannan pituuden sekä korkeuden ja tämän jälkeen valitsee neljästä napista(ympyrälieriö, ympyräkartio, neliöpohjainen lieriö, pyramidi), minkä kappaleen pinta-alan ja tilavuuden hän haluaa laskea.
+
 
 ## Dokumentaatio
 
