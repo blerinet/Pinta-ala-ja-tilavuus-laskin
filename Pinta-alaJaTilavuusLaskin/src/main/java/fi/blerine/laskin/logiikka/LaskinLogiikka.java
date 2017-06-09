@@ -1,17 +1,44 @@
 package fi.blerine.laskin.logiikka;
 
+/**
+ * Luokka yhdistää ympyrälieriön, -kartion, neliöpohjaisen lieriön sekä
+ * pyramidin pinta-alan ja tilavuuden laskemisen yhdeksi kokonaisuudeksi, eli
+ * pinta-ala ja tilavuus laskimeksi. Luokka hoitaa kuitenkin vain laskimen
+ * loogisen puolen.
+ */
 public class LaskinLogiikka {
 
     private String kappale;
     private String pohjanMuoto;
     private double sade;
     private double korkeus;
+    private YmpyralierioLogiikka ympyralierio;
+    private YmpyrakartioLogiikka ympyrakartio;
+    private NelioPohjainenLierioLogiikka nelioLierio;
+    private PyramidiLogiikka pyramidi;
 
+    /**
+     * Konstruktori asettaa käyttäjän syöttämät arvot yksityisten muuttujien
+     * arvoksi. Tämän lisäksi konstruktorissa luodaan valmiiksi ympyrälieriö,
+     * ympyräkartio, neliöpohjainen lieriö ja pyramidi, jotka tallennetaan
+     * myöskin yksityisiin muuttujiin, jotta niitä on helpompi käyttää muissa
+     * metodeissa.
+     *
+     * @param kappale käyttäjän antama kappale
+     * @param pohjanMuoto käyttäjän antama pohjan muoto
+     * @param sade käyttäjän antama säteen pituus
+     * @param korkeus käyttäjän antama korkeus
+     *
+     */
     public LaskinLogiikka(String kappale, String pohjanMuoto, double sade, double korkeus) {
         this.kappale = kappale;
         this.pohjanMuoto = pohjanMuoto;
         this.sade = sade;
         this.korkeus = korkeus;
+        this.ympyralierio = new YmpyralierioLogiikka(sade, korkeus);
+        this.ympyrakartio = new YmpyrakartioLogiikka(sade, korkeus);
+        this.nelioLierio = new NelioPohjainenLierioLogiikka(sade, korkeus);
+        this.pyramidi = new PyramidiLogiikka(sade, korkeus);
     }
 
     public String getKappale() {
@@ -30,81 +57,71 @@ public class LaskinLogiikka {
         return sade;
     }
 
+    public void setSade(double sade) {
+        this.sade = sade;
+    }
+
+    public void setKorkeus(double korkeus) {
+        this.korkeus = korkeus;
+    }
+
+    /**
+     * Metodi laskee annetun kappaleen pinta-alan niin, että aluksi metodi
+     * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
+     * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen pinta-alan
+     * String-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
+     * metodi ilmoittaa siitä.
+     *
+     * @return halutun kappalleen pinta-ala String-muodossa tai ilmoitus siitä
+     * että kappalleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko
+     * ympyrä tai neliö
+     */
     public String pintaAla() {
         if (kappale == "lieriö") {
             if (pohjanMuoto == "ympyrä") {
-                return "Pinta-ala on " + ympyralierioPintaAla() + " neliösenttimetriä.";
+                return "Pinta-ala on " + this.ympyralierio.pintaAla() + " neliösenttimetriä.";
             } else if (pohjanMuoto == "neliö") {
-                return "Pinta-ala on " + nelioPohjainenLierioPintaAla() + " neliösenttimetriä.";
+                return "Pinta-ala on " + this.nelioLierio.pintaAla() + " neliösenttimetriä.";
             }
         }
         if (kappale == "kartio") {
             if (pohjanMuoto == "ympyrä") {
-                return "Pinta-ala on " + ympyrakartioPintaAla() + " neliösenttimetriä.";
+                return "Pinta-ala on " + this.ympyrakartio.pintaAla() + " neliösenttimetriä.";
             } else if (pohjanMuoto == "neliö") {
-                return "Pinta-ala on " + pyramidiPintaAla() + " neliösenttimetriä.";
+                return "Pinta-ala on " + this.pyramidi.pintaAla() + " neliösenttimetriä.";
             }
         }
-        
+
         return "Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.";
     }
 
+    /**
+     * Metodi laskee annetun kappaleen tilavuuden niin, että aluksi metodi
+     * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
+     * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen tilavuuden
+     * String-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
+     * metodi ilmoittaa siitä.
+     *
+     * @return halutun kappalleen tilavuus String-muodossa tai ilmoitus siitä
+     * että kappalleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko
+     * ympyrä tai neliö
+     */
     public String tilavuus() {
         if (kappale == "lieriö") {
             if (pohjanMuoto == "ympyrä") {
-                return "Tilavuus on " + ympyralierioTilavuus() + " kuutiosenttimetriä.";
+                return "Tilavuus on " + this.ympyralierio.tilavuus() + " kuutiosenttimetriä.";
             } else if (pohjanMuoto == "neliö") {
-                return "Tilavuus on " + nelioPohjainenLierioTilavuus() + " kuutiosenttimetriä.";
+                return "Tilavuus on " + this.nelioLierio.tilavuus() + " kuutiosenttimetriä.";
             }
         }
         if (kappale == "kartio") {
             if (pohjanMuoto == "ympyrä") {
-                return "Tilavuus on " + ympyrakartioTilavuus() + " kuutiosenttimetriä.";
+                return "Tilavuus on " + this.ympyrakartio.tilavuus() + " kuutiosenttimetriä.";
             } else if (pohjanMuoto == "neliö") {
-                return "Tilavuus on " + pyramidiTilavuus() + " kuutiosenttimetriä.";
+                return "Tilavuus on " + this.pyramidi.tilavuus() + " kuutiosenttimetriä.";
             }
         }
-        
+
         return "Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.";
-    }
-
-    public double ympyralierioPintaAla() {
-        YmpyralierioLogiikka lierio = new YmpyralierioLogiikka(sade, korkeus);
-        return lierio.pintaAla();
-    }
-
-    public double ympyrakartioPintaAla() {
-        YmpyrakartioLogiikka kartio = new YmpyrakartioLogiikka(sade, korkeus);
-        return kartio.pintaAla();
-    }
-
-    public double ympyralierioTilavuus() {
-        YmpyralierioLogiikka lierio = new YmpyralierioLogiikka(sade, korkeus);
-        return lierio.tilavuus();
-    }
-
-    public double ympyrakartioTilavuus() {
-        YmpyrakartioLogiikka kartio = new YmpyrakartioLogiikka(sade, korkeus);
-        return kartio.tilavuus();
-    }
-
-    public double nelioPohjainenLierioPintaAla() {
-        NelioPohjainenLierioLogiikka lierio = new NelioPohjainenLierioLogiikka(sade, korkeus);
-        return lierio.pintaAla();
-    }
-
-    public double nelioPohjainenLierioTilavuus() {
-        NelioPohjainenLierioLogiikka lierio = new NelioPohjainenLierioLogiikka(sade, korkeus);
-        return lierio.tilavuus();
-    }
-
-    public double pyramidiPintaAla() {
-        PyramidiLogiikka pyramidi = new PyramidiLogiikka(sade, korkeus);
-        return pyramidi.pintaAla();
-    }
-
-    public double pyramidiTilavuus() {
-        PyramidiLogiikka pyramidi = new PyramidiLogiikka(sade, korkeus);
-        return pyramidi.tilavuus();
     }
 }

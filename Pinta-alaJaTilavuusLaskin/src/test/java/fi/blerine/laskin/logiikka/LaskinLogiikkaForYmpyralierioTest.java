@@ -53,13 +53,15 @@ public class LaskinLogiikkaForYmpyralierioTest {
     }
 
     @Test
-    public void pintaAlaOikeinKunKyseessaYmpyralierio() {
-        assertEquals(131.9468914507, laskin.ympyralierioPintaAla(), 1);
+    public void setSadeToimiiOikein() {
+        laskin.setSade(7);
+        assertEquals(7, laskin.getSade(), 1);
     }
 
     @Test
-    public void tilavuusOikeinKunKyseessaYmpyralierio() {
-        assertEquals(113.0973355292, laskin.ympyralierioTilavuus(), 1);
+    public void setKorkeusToimiiOikein() {
+        laskin.setKorkeus(8);
+        assertEquals(8, laskin.getKorkeus(), 1);
     }
 
     @Test

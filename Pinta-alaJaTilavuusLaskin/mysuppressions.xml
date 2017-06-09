@@ -12,4 +12,5 @@ and open the template in the editor.
 <suppressions>
     <suppress files="Main.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="Kayttoliittyma.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="KlikkaustenKuuntelija.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

@@ -52,16 +52,6 @@ public class LaskinLogiikkaForPyramidiTest {
     }
 
     @Test
-    public void pintaAlaOikeinKunKyseessaPyramidi() {
-        assertEquals(20.492422502470642, laskin.pyramidiPintaAla(), 1);
-    }
-
-    @Test
-    public void tilavuusOikeinKunKyseessaPyramidi() {
-        assertEquals(5.333333333333333, laskin.pyramidiTilavuus(), 1);
-    }
-
-    @Test
     public void pintaAlaMetodiToimiiOikeinKunKyseessaPyramidi() {
         assertEquals("Pinta-ala on 20.492422502470642 neliösenttimetriä.", laskin.pintaAla());
     }

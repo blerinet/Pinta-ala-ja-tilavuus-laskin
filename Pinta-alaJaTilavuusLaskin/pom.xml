@@ -37,11 +37,11 @@
                 <version>1.1.8</version>
                 <configuration>
                     <targetClasses>
-                        <param>fi.blerine.laskin.*</param>
+                        <param>fi.blerine.laskin.logiikka.*</param>
                         <param>fi.blerine.laskin.logiikka.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>fi.blerine.laskin.*</param>
+                        <param>fi.blerine.laskin.logiikka.*</param>
                         <param>fi.blerine.laskin.logiikka.*</param>
                     </targetTests>
                 </configuration>

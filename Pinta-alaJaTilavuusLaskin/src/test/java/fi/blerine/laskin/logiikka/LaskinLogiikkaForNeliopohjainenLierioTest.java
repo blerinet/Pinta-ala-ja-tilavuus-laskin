@@ -52,16 +52,6 @@ public class LaskinLogiikkaForNeliopohjainenLierioTest {
     }
 
     @Test
-    public void pintaAlaOikeinKunKyseessaNeliopohjainenLierio() {
-        assertEquals(40.0, laskin.nelioPohjainenLierioPintaAla(), 1);
-    }
-
-    @Test
-    public void tilavuusOikeinKunKyseessaNeliopohjainenLierio() {
-        assertEquals(16.0, laskin.nelioPohjainenLierioTilavuus(), 1);
-    }
-
-    @Test
     public void pintaAlaMetodiToimiiOikeinKunKyseessaNeliopohjainenLierio() {
         assertEquals("Pinta-ala on 40.0 neliösenttimetriä.", laskin.pintaAla());
     }
