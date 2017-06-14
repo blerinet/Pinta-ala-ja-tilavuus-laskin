@@ -70,58 +70,58 @@ public class LaskinLogiikka {
      * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
      * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen pinta-alan
      * String-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
-     * metodi ilmoittaa siitä.
+     * metodi ilmoittaa siitä palauttamalla tilavuudeksi -1000.
      *
-     * @return halutun kappalleen pinta-ala String-muodossa tai ilmoitus siitä
-     * että kappalleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko
-     * ympyrä tai neliö
+     * @return halutun kappalleen pinta-ala double-muodossa tai -1000, jos
+     * kappale ei ole lieriö tai kartio sekä jos pohjan muoto ei ole ympyrä tai
+     * neliö.
      */
-    public String pintaAla() {
+    public double pintaAla() {
         if (kappale == "lieriö") {
             if (pohjanMuoto == "ympyrä") {
-                return "Pinta-ala on " + this.ympyralierio.pintaAla() + " neliösenttimetriä.";
+                return this.ympyralierio.pintaAla();
             } else if (pohjanMuoto == "neliö") {
-                return "Pinta-ala on " + this.nelioLierio.pintaAla() + " neliösenttimetriä.";
+                return this.nelioLierio.pintaAla();
             }
         }
         if (kappale == "kartio") {
             if (pohjanMuoto == "ympyrä") {
-                return "Pinta-ala on " + this.ympyrakartio.pintaAla() + " neliösenttimetriä.";
+                return this.ympyrakartio.pintaAla();
             } else if (pohjanMuoto == "neliö") {
-                return "Pinta-ala on " + this.pyramidi.pintaAla() + " neliösenttimetriä.";
+                return this.pyramidi.pintaAla();
             }
         }
 
-        return "Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.";
+        return -1000;
     }
 
     /**
      * Metodi laskee annetun kappaleen tilavuuden niin, että aluksi metodi
      * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
      * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen tilavuuden
-     * String-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
-     * metodi ilmoittaa siitä.
+     * double-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
+     * metodi ilmoittaa siitä palauttamalla tilavuudeksi -1000.
      *
-     * @return halutun kappalleen tilavuus String-muodossa tai ilmoitus siitä
-     * että kappalleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko
-     * ympyrä tai neliö
+     * @return halutun kappalleen tilavuus double-muodossa tai -1000, jos
+     * kappale ei ole lieriö tai kartio sekä jos pohjan muoto ei ole ympyrä tai
+     * neliö.
      */
-    public String tilavuus() {
+    public double tilavuus() {
         if (kappale == "lieriö") {
             if (pohjanMuoto == "ympyrä") {
-                return "Tilavuus on " + this.ympyralierio.tilavuus() + " kuutiosenttimetriä.";
+                return this.ympyralierio.tilavuus();
             } else if (pohjanMuoto == "neliö") {
-                return "Tilavuus on " + this.nelioLierio.tilavuus() + " kuutiosenttimetriä.";
+                return this.nelioLierio.tilavuus();
             }
         }
         if (kappale == "kartio") {
             if (pohjanMuoto == "ympyrä") {
-                return "Tilavuus on " + this.ympyrakartio.tilavuus() + " kuutiosenttimetriä.";
+                return this.ympyrakartio.tilavuus();
             } else if (pohjanMuoto == "neliö") {
-                return "Tilavuus on " + this.pyramidi.tilavuus() + " kuutiosenttimetriä.";
+                return this.pyramidi.tilavuus();
             }
         }
 
-        return "Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.";
+        return -1000;
     }
 }

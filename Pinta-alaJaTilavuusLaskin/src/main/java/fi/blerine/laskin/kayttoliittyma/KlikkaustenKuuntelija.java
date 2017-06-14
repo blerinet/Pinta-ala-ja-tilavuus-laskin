@@ -76,7 +76,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                 String kappale = "lieriö";
                 String pohjanMuoto = "ympyrä";
                 LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = laskin.pintaAla() + " " + laskin.tilavuus();
+                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
                 tulostuskentta.setText(tulostus);
                 sadeTaiKanta.setText("");
                 this.korkeus.setText("");
@@ -94,7 +94,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                 String kappale = "kartio";
                 String pohjanMuoto = "ympyrä";
                 LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = laskin.pintaAla() + " " + laskin.tilavuus();
+                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
                 tulostuskentta.setText(tulostus);
                 sadeTaiKanta.setText("");
                 this.korkeus.setText("");
@@ -112,7 +112,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                 String kappale = "lieriö";
                 String pohjanMuoto = "neliö";
                 LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = laskin.pintaAla() + " " + laskin.tilavuus();
+                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
                 tulostuskentta.setText(tulostus);
                 sadeTaiKanta.setText("");
                 this.korkeus.setText("");
@@ -130,7 +130,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                 String kappale = "kartio";
                 String pohjanMuoto = "neliö";
                 LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = laskin.pintaAla() + " " + laskin.tilavuus();
+                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
                 tulostuskentta.setText(tulostus);
                 sadeTaiKanta.setText("");
                 this.korkeus.setText("");

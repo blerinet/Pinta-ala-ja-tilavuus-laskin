@@ -53,35 +53,35 @@ public class LaskinLogiikkaForNeliopohjainenLierioTest {
 
     @Test
     public void pintaAlaMetodiToimiiOikeinKunKyseessaNeliopohjainenLierio() {
-        assertEquals("Pinta-ala on 40.0 neliösenttimetriä.", laskin.pintaAla());
+        assertEquals(40.0, laskin.pintaAla(), 1);
     }
 
     @Test
     public void tilavuusMetodiToimiiOikeinKunKyseessaNeliopohjainenLierio() {
-        assertEquals("Tilavuus on 16.0 kuutiosenttimetriä.", laskin.tilavuus());
+        assertEquals(16.0, laskin.tilavuus(), 1);
     }
 
     @Test
     public void pintaAlaMetodiEiToimiJosKappaleEiOleLierio() {
         LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "neliö", 2, 4);
-        assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.pintaAla());
+        assertEquals(-1000, laskin.tilavuus(), 1);
     }
 
     @Test
     public void tilavuusMetodiEiToimiJosKappaleEiOleLierio() {
         LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "neliö", 2, 4);
-        assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.tilavuus());
+        assertEquals(-1000, laskin.tilavuus(), 1);
     }
 
     @Test
     public void pintaAlaMetodiEiToimiJosPohjanMuotoEiOleNelio() {
         LaskinLogiikka laskin = new LaskinLogiikka("lieriö", "fjkfkf", 3, 4);
-        assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.pintaAla());
+        assertEquals(-1000, laskin.tilavuus(), 1);
     }
 
     @Test
     public void tilavuusMetodiEiToimiJosPohjanMuotoEiOleNelio() {
         LaskinLogiikka laskin = new LaskinLogiikka("lieriö", "fjkfkf", 3, 4);
-        assertEquals("Kappaleen täytyy olla joko lieriö tai kartio ja pohjan muodon joko ympyrä tai neliö.", laskin.tilavuus());
+        assertEquals(-1000, laskin.tilavuus(), 1);
     }
 }
