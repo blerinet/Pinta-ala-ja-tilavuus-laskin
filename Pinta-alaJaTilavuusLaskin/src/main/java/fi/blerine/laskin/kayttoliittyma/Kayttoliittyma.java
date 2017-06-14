@@ -32,7 +32,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Pinta-ala ja tilavuus laskin");
-        frame.setPreferredSize(new Dimension(1000, 500));
+        frame.setPreferredSize(new Dimension(1500, 500));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,10 +55,10 @@ public class Kayttoliittyma implements Runnable {
         container.setLayout(layout);
 
         JPanel kappalePaneeli = new JPanel(new GridLayout(2, 2));
-        JButton ympyralierio = new JButton("Ympyrälieriö");
-        JButton ympyrakartio = new JButton("Ympyräkartio");
-        JButton nelioLierio = new JButton("Neliöpohjainen lieriö");
-        JButton pyramidi = new JButton("Pyramidi");
+        JButton lierio = new JButton("Lieriö");
+        JButton kartio = new JButton("Kartio");
+        JButton ympyra = new JButton("Ympyrä");
+        JButton nelio = new JButton("Neliö");
         JPanel sadeJaKorkeusPaneeli = new JPanel(new GridLayout(2, 2));
         JPanel paneeli = new JPanel(new GridLayout(1, 2));
         JLabel sadeTaiKantaTeksti = new JLabel("Säde/Kanta senttimetreinä: ");
@@ -66,27 +66,37 @@ public class Kayttoliittyma implements Runnable {
         JLabel korkeusTeksti = new JLabel("Korkeus senttimetreinä: ");
         JTextArea korkeus = new JTextArea();
         JButton nollaus = new JButton("Nollaa kaikki");
+        JPanel tulostus = new JPanel(new GridLayout(1, 2));
+        JButton laske = new JButton("Laske pinta-ala ja tilavuus");
         JTextField tulostuskentta = new JTextField("0");
 
-        ympyralierio.addActionListener(new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, ympyralierio, ympyrakartio, nelioLierio, pyramidi, tulostuskentta));
-        ympyrakartio.addActionListener(new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, ympyralierio, ympyrakartio, nelioLierio, pyramidi, tulostuskentta));
-        nelioLierio.addActionListener(new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, ympyralierio, ympyrakartio, nelioLierio, pyramidi, tulostuskentta));
-        pyramidi.addActionListener(new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, ympyralierio, ympyrakartio, nelioLierio, pyramidi, tulostuskentta));
-        nollaus.addActionListener(new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, ympyralierio, ympyrakartio, nelioLierio, pyramidi, tulostuskentta));
+        KlikkaustenKuuntelija kuuntelija = new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, lierio, kartio, ympyra, nelio, tulostuskentta, laske);
+        lierio.addActionListener(kuuntelija);
+        kartio.addActionListener(kuuntelija);
+        ympyra.addActionListener(kuuntelija);
+        nelio.addActionListener(kuuntelija);
+        nollaus.addActionListener(kuuntelija);
+        laske.addActionListener(kuuntelija);
 
-        kappalePaneeli.add(ympyralierio);
-        kappalePaneeli.add(ympyrakartio);
-        kappalePaneeli.add(nelioLierio);
-        kappalePaneeli.add(pyramidi);
+        kappalePaneeli.add(lierio);
+        kappalePaneeli.add(kartio);
+        kappalePaneeli.add(ympyra);
+        kappalePaneeli.add(nelio);
         sadeJaKorkeusPaneeli.add(sadeTaiKantaTeksti);
         sadeJaKorkeusPaneeli.add(sadeTaiKanta);
         sadeJaKorkeusPaneeli.add(korkeusTeksti);
         sadeJaKorkeusPaneeli.add(korkeus);
         paneeli.add(sadeJaKorkeusPaneeli);
+        tulostus.add(laske);
+        tulostus.add(tulostuskentta);
         paneeli.add(nollaus);
-        container.add(paneeli);
         container.add(kappalePaneeli);
-        container.add(tulostuskentta);
+        container.add(paneeli);
+        container.add(tulostus);
+
+        ympyra.setEnabled(false);
+        nelio.setEnabled(false);
+        laske.setEnabled(false);
 
     }
 

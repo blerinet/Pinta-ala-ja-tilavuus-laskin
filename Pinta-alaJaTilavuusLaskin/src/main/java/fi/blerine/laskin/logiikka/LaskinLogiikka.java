@@ -8,8 +8,8 @@ package fi.blerine.laskin.logiikka;
  */
 public class LaskinLogiikka {
 
-    private String kappale;
-    private String pohjanMuoto;
+    private Kappale kappale;
+    private PohjanMuoto pohjanMuoto;
     private double sade;
     private double korkeus;
     private YmpyralierioLogiikka ympyralierio;
@@ -30,7 +30,7 @@ public class LaskinLogiikka {
      * @param korkeus käyttäjän antama korkeus
      *
      */
-    public LaskinLogiikka(String kappale, String pohjanMuoto, double sade, double korkeus) {
+    public LaskinLogiikka(Kappale kappale, PohjanMuoto pohjanMuoto, double sade, double korkeus) {
         this.kappale = kappale;
         this.pohjanMuoto = pohjanMuoto;
         this.sade = sade;
@@ -41,11 +41,11 @@ public class LaskinLogiikka {
         this.pyramidi = new PyramidiLogiikka(sade, korkeus);
     }
 
-    public String getKappale() {
+    public Kappale getKappale() {
         return kappale;
     }
 
-    public String getPohjanMuoto() {
+    public PohjanMuoto getPohjanMuoto() {
         return pohjanMuoto;
     }
 
@@ -69,59 +69,45 @@ public class LaskinLogiikka {
      * Metodi laskee annetun kappaleen pinta-alan niin, että aluksi metodi
      * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
      * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen pinta-alan
-     * String-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
-     * metodi ilmoittaa siitä palauttamalla tilavuudeksi -1000.
+     * String-muodossa.
      *
-     * @return halutun kappalleen pinta-ala double-muodossa tai -1000, jos
-     * kappale ei ole lieriö tai kartio sekä jos pohjan muoto ei ole ympyrä tai
-     * neliö.
+     * @return halutun kappalleen pinta-ala double-muodossa
      */
     public double pintaAla() {
-        if (kappale == "lieriö") {
-            if (pohjanMuoto == "ympyrä") {
+        if (kappale == Kappale.LIERIO) {
+            if (pohjanMuoto == PohjanMuoto.YMPYRA) {
                 return this.ympyralierio.pintaAla();
-            } else if (pohjanMuoto == "neliö") {
+            } else if (pohjanMuoto == PohjanMuoto.NELIO) {
                 return this.nelioLierio.pintaAla();
             }
         }
-        if (kappale == "kartio") {
-            if (pohjanMuoto == "ympyrä") {
-                return this.ympyrakartio.pintaAla();
-            } else if (pohjanMuoto == "neliö") {
-                return this.pyramidi.pintaAla();
-            }
+        if (kappale == Kappale.KARTIO && this.pohjanMuoto == PohjanMuoto.YMPYRA) {
+            return this.ympyrakartio.pintaAla();
         }
 
-        return -1000;
+        return this.pyramidi.pintaAla();
     }
 
     /**
      * Metodi laskee annetun kappaleen tilavuuden niin, että aluksi metodi
      * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
      * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen tilavuuden
-     * double-muodossa. Jos kappale tai pohjanmuoto eivät ole halutun laisia,
-     * metodi ilmoittaa siitä palauttamalla tilavuudeksi -1000.
+     * double-muodossa.
      *
-     * @return halutun kappalleen tilavuus double-muodossa tai -1000, jos
-     * kappale ei ole lieriö tai kartio sekä jos pohjan muoto ei ole ympyrä tai
-     * neliö.
+     * @return halutun kappalleen tilavuus double-muodossa
      */
     public double tilavuus() {
-        if (kappale == "lieriö") {
-            if (pohjanMuoto == "ympyrä") {
+        if (kappale == Kappale.LIERIO) {
+            if (pohjanMuoto == PohjanMuoto.YMPYRA) {
                 return this.ympyralierio.tilavuus();
-            } else if (pohjanMuoto == "neliö") {
+            } else if (pohjanMuoto == PohjanMuoto.NELIO) {
                 return this.nelioLierio.tilavuus();
             }
         }
-        if (kappale == "kartio") {
-            if (pohjanMuoto == "ympyrä") {
-                return this.ympyrakartio.tilavuus();
-            } else if (pohjanMuoto == "neliö") {
-                return this.pyramidi.tilavuus();
-            }
+        if (kappale == Kappale.KARTIO && this.pohjanMuoto == PohjanMuoto.YMPYRA) {
+            return this.ympyrakartio.tilavuus();
         }
 
-        return -1000;
+        return this.pyramidi.tilavuus();
     }
 }

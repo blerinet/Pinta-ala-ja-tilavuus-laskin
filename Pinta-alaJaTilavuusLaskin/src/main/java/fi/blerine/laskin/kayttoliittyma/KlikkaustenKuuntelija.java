@@ -1,6 +1,8 @@
 package fi.blerine.laskin.kayttoliittyma;
 
+import fi.blerine.laskin.logiikka.Kappale;
 import fi.blerine.laskin.logiikka.LaskinLogiikka;
+import fi.blerine.laskin.logiikka.PohjanMuoto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -13,15 +15,17 @@ import javax.swing.JTextField;
  */
 public class KlikkaustenKuuntelija implements ActionListener {
 
-    private LaskinLogiikka laskin;
+    private Kappale kappale;
+    private PohjanMuoto pohjanMuoto;
     private JTextArea sadeTaiKanta;
     private JTextArea korkeus;
     private JButton nollaus;
-    private JButton ympyralierio;
-    private JButton ympyrakartio;
-    private JButton nelioLierio;
-    private JButton pyramidi;
+    private JButton lierio;
+    private JButton kartio;
+    private JButton ympyra;
+    private JButton nelio;
     private JTextField tulostuskentta;
+    private JButton laske;
 
     /**
      * Konstruktori asettaa annetut tiedot yksityisten muuttujien arvoksi, jotta
@@ -32,27 +36,30 @@ public class KlikkaustenKuuntelija implements ActionListener {
      * @param korkeus käyttöliittymässä oleva tekstikenttä johon syötetään
      * kappaleen korkeus
      * @param nollaus käyttöliittymässä oleva nollaus-nappi
-     * @param ympyralierio käyttöliittymässä oleva ympyrälieriö-nappi, joka
-     * laskee ympyrälieriön pinta-alan ja tilavuuden
-     * @param ympyrakartio käyttöliittymässä oleva ympyräkartio-nappi, joka
-     * laskee ympyräkartion pinta-alan ja tilavuuden
-     * @param nelioLierio käyttöliittymässä oleva neliöpohjainen lieriö-nappi,
-     * joka laskee neliöpohjaisen lieriön pinta-alan ja tilavuuden
-     * @param pyramidi käyttöliittymässä oleva ypyramidi-nappi, joka laskee
-     * pyramidin pinta-alan ja tilavuuden
+     * @param lierio käyttöliittymässä oleva lierio-nappi, joka valitsee
+     * kappaleen muodoksi lieriön
+     * @param kartio käyttöliittymässä oleva kartio-nappi, joka valitsee
+     * kappaleen muodoksi kartion
+     * @param ympyra käyttöliittymässä oleva ympyra-nappi, joka valitsee
+     * kappaleen pohjaksi ympyrän
+     * @param nelio käyttöliittymässä oleva nelio-nappi, joka valitsee kappaleen
+     * pohjaksi neliön
      * @param tulostuskentta käyttöliittymässä oleva tekstikenttä, johon
      * palautetaan haluttu vastaus
+     * @param laske käyttöliittymässä oleva nappi joka laskee halutun kappaleen
+     * pinta-alan ja tilavuuden
      *
      */
-    public KlikkaustenKuuntelija(JTextArea sadeTaiKanta, JTextArea korkeus, JButton nollaus, JButton ympyralierio, JButton ympyrakartio, JButton nelioLierio, JButton pyramidi, JTextField tulostuskentta) {
+    public KlikkaustenKuuntelija(JTextArea sadeTaiKanta, JTextArea korkeus, JButton nollaus, JButton lierio, JButton kartio, JButton ympyra, JButton nelio, JTextField tulostuskentta, JButton laske) {
         this.sadeTaiKanta = sadeTaiKanta;
         this.korkeus = korkeus;
         this.nollaus = nollaus;
-        this.ympyralierio = ympyralierio;
-        this.ympyrakartio = ympyrakartio;
-        this.nelioLierio = nelioLierio;
-        this.pyramidi = pyramidi;
+        this.lierio = lierio;
+        this.kartio = kartio;
+        this.ympyra = ympyra;
+        this.nelio = nelio;
         this.tulostuskentta = tulostuskentta;
+        this.laske = laske;
     }
 
     /**
@@ -68,72 +75,53 @@ public class KlikkaustenKuuntelija implements ActionListener {
             sadeTaiKanta.setText("");
             korkeus.setText("");
             tulostuskentta.setText("0");
+            lierio.setEnabled(true);
+            kartio.setEnabled(true);
+            ympyra.setEnabled(false);
+            nelio.setEnabled(false);
+            laske.setEnabled(false);
         }
-        if (e.getSource() == ympyralierio) {
-            try {
-                int sade = Integer.parseInt(this.sadeTaiKanta.getText());
-                int korkeus = Integer.parseInt(this.korkeus.getText());
-                String kappale = "lieriö";
-                String pohjanMuoto = "ympyrä";
-                LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
-                tulostuskentta.setText(tulostus);
-                sadeTaiKanta.setText("");
-                this.korkeus.setText("");
-            } catch (Exception ex) {
-                sadeTaiKanta.setText("");
-                korkeus.setText("");
-                tulostuskentta.setText("Anna säde ja korkeus senttimetreinä.");
-            }
+        if (e.getSource() == lierio) {
+            this.kappale = Kappale.LIERIO;
+            kartio.setEnabled(false);
+            ympyra.setEnabled(true);
+            nelio.setEnabled(true);
         }
 
-        if (e.getSource() == ympyrakartio) {
-            try {
-                int sade = Integer.parseInt(this.sadeTaiKanta.getText());
-                int korkeus = Integer.parseInt(this.korkeus.getText());
-                String kappale = "kartio";
-                String pohjanMuoto = "ympyrä";
-                LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
-                tulostuskentta.setText(tulostus);
-                sadeTaiKanta.setText("");
-                this.korkeus.setText("");
-            } catch (Exception ex) {
-                sadeTaiKanta.setText("");
-                korkeus.setText("");
-                tulostuskentta.setText("Anna säde ja korkeus senttimetreinä.");
-            }
+        if (e.getSource() == kartio) {
+            lierio.setEnabled(false);
+            ympyra.setEnabled(true);
+            nelio.setEnabled(true);
+            this.kappale = Kappale.KARTIO;
         }
 
-        if (e.getSource() == nelioLierio) {
-            try {
-                int sade = Integer.parseInt(this.sadeTaiKanta.getText());
-                int korkeus = Integer.parseInt(this.korkeus.getText());
-                String kappale = "lieriö";
-                String pohjanMuoto = "neliö";
-                LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
-                tulostuskentta.setText(tulostus);
-                sadeTaiKanta.setText("");
-                this.korkeus.setText("");
-            } catch (Exception ex) {
-                sadeTaiKanta.setText("");
-                korkeus.setText("");
-                tulostuskentta.setText("Anna säde ja korkeus senttimetreinä.");
-            }
+        if (e.getSource() == ympyra) {
+            this.pohjanMuoto = PohjanMuoto.YMPYRA;
+            nelio.setEnabled(false);
+            laske.setEnabled(true);
         }
 
-        if (e.getSource() == pyramidi) {
+        if (e.getSource() == nelio) {
+            ympyra.setEnabled(false);
+            laske.setEnabled(true);
+            this.pohjanMuoto = PohjanMuoto.NELIO;
+        }
+
+        if (e.getSource() == laske) {
             try {
-                int sade = Integer.parseInt(this.sadeTaiKanta.getText());
-                int korkeus = Integer.parseInt(this.korkeus.getText());
-                String kappale = "kartio";
-                String pohjanMuoto = "neliö";
-                LaskinLogiikka laskin = new LaskinLogiikka(kappale, pohjanMuoto, sade, korkeus);
-                String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
-                tulostuskentta.setText(tulostus);
-                sadeTaiKanta.setText("");
-                this.korkeus.setText("");
+                double sade = Double.parseDouble(this.sadeTaiKanta.getText());
+                double korkeus = Double.parseDouble(this.korkeus.getText());
+                if (sade <= 0 || korkeus <= 0) {
+                    tulostuskentta.setText("Säde ja/tai korkeus eivät voi olla negatiivisia tai nolla");
+                    sadeTaiKanta.setText("");
+                    this.korkeus.setText("");
+                } else {
+                    LaskinLogiikka laskin = new LaskinLogiikka(this.kappale, this.pohjanMuoto, sade, korkeus);
+                    String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
+                    tulostuskentta.setText(tulostus);
+                    sadeTaiKanta.setText("");
+                    this.korkeus.setText("");
+                }
             } catch (Exception ex) {
                 sadeTaiKanta.setText("");
                 korkeus.setText("");

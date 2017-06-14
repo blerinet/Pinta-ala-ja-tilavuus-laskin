@@ -24,7 +24,7 @@ public class LaskinLogiikkaForYmpyrakartioTest {
 
     @Before
     public void setUp() {
-        this.laskin = new LaskinLogiikka("kartio", "ympyrä", 3, 4);
+        this.laskin = new LaskinLogiikka(Kappale.KARTIO, PohjanMuoto.YMPYRA, 3, 4);
     }
 
     @After
@@ -33,12 +33,12 @@ public class LaskinLogiikkaForYmpyrakartioTest {
 
     @Test
     public void konstruktoriAsettaaOikeanKappaleenKunKyseessaKartio() {
-        assertEquals("kartio", laskin.getKappale());
+        assertEquals("KARTIO", laskin.getKappale().name());
     }
 
     @Test
     public void konstruktoriAsettaaOikeanPohjanMuodon() {
-        assertEquals("ympyrä", laskin.getPohjanMuoto());
+        assertEquals("YMPYRA", laskin.getPohjanMuoto().name());
     }
 
     @Test
@@ -73,26 +73,26 @@ public class LaskinLogiikkaForYmpyrakartioTest {
         assertEquals(37.69911184307752, laskin.tilavuus(), 1);
     }
 
-    public void pintaAlaMetodiEiToimiJosKappaleEiOleKartio() {
-        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "ympyrä", 3, 4);
-        assertEquals(-1000, laskin.tilavuus(), 1);
-    }
-
-    @Test
-    public void tilavuusMetodiEiToimiJosKappaleEiOleKartio() {
-        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "ympyrä", 3, 4);
-        assertEquals(-1000, laskin.tilavuus(), 1);
-    }
-
-    @Test
-    public void pintaAlaMetodiEiToimiJosPohjanMuotoEiOleYmpyra() {
-        LaskinLogiikka laskin = new LaskinLogiikka("kartio", "fjkfkf", 3, 4);
-        assertEquals(-1000, laskin.tilavuus(), 1);
-    }
-
-    @Test
-    public void tilavuusMetodiEiToimiJosPohjanMuotoEiOleYmpyra() {
-        LaskinLogiikka laskin = new LaskinLogiikka("kartio", "fjkfkf", 3, 4);
-        assertEquals(-1000, laskin.tilavuus(), 1);
-    }
+//    public void pintaAlaMetodiEiToimiJosKappaleEiOleKartio() {
+//        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "ympyrä", 3, 4);
+//        assertEquals(-1000, laskin.tilavuus(), 1);
+//    }
+//
+//    @Test
+//    public void tilavuusMetodiEiToimiJosKappaleEiOleKartio() {
+//        LaskinLogiikka laskin = new LaskinLogiikka("aahsjhdhj", "ympyrä", 3, 4);
+//        assertEquals(-1000, laskin.tilavuus(), 1);
+//    }
+//
+//    @Test
+//    public void pintaAlaMetodiEiToimiJosPohjanMuotoEiOleYmpyra() {
+//        LaskinLogiikka laskin = new LaskinLogiikka("kartio", "fjkfkf", 3, 4);
+//        assertEquals(-1000, laskin.tilavuus(), 1);
+//    }
+//
+//    @Test
+//    public void tilavuusMetodiEiToimiJosPohjanMuotoEiOleYmpyra() {
+//        LaskinLogiikka laskin = new LaskinLogiikka("kartio", "fjkfkf", 3, 4);
+//        assertEquals(-1000, laskin.tilavuus(), 1);
+//    }
 }
