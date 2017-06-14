@@ -5,10 +5,6 @@
  */
 package fi.blerine.laskin.logiikka;
 
-/**
- *
- * @author Blerine
- */
 public enum Kappale {
 
     LIERIO, KARTIO
