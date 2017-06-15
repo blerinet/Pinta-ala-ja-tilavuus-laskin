@@ -10,3 +10,4 @@ Päivä | Tunnit | Kuvaus
 31.05.2017 | 1h | Käyttöliittymäluokan muokkaamista, checkstyle raportin muokkamista niin, että käyttöliittymäluokkia ei oteta mukaan, luokkakaavion päivittämistä sekä pit ja checkstyle raporttien generointi ja niiden linkkaaminen README-osioon
 09.06.2017 | 5h | Päivittänyt projektin logiikka-osuutta, muokannut testejä, päivittänyt käyttöliittymää sekä luonut tapahtumien käsittelijän, JavaDoc:n aloittaminen sekä pit ja checkstyle raportin generoiminen.
 14.06.2017 | 5h | LaskinLogiikan muuttujien muokkaamista enumeiksi; testien muokkaamista, jotta ne toimivat kun LaskinLogiikassa tapahtui muutoksia; käyttöliittymän muokkaamista ja sen kanssa tappelemista sekä checkstyle- ja pit-raportin generoimista. 
+15.06.2017 | 2h | Projektin koodin siistimistä ja virheiden korjaamista, sekvenssikaavioiden palauttaminen mieleen ja niiden tekeminen
