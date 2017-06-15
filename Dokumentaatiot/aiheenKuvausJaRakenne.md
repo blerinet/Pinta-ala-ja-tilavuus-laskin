@@ -11,6 +11,21 @@
 ### Luokkakaavio
 
 ![Luokkakaavio](luokkakaavio.png)
+
+
+
+
+### Sekvenssikaavio 1
 ![Sekvenssikaavio1](Sekvenssikaavio1.png)
+
+
+
+
+### Sekvenssikaavio2
 ![Sekvenssikaavio2](Sekvenssikaavio2.png)
+
+
+
+
+### Sekvenssikaavio3
 ![Sekvenssikaavio3](Sekvenssikaavio3.png)
