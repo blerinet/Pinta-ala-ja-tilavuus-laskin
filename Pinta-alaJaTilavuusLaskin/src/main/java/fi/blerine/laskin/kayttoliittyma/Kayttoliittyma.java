@@ -16,7 +16,7 @@ import javax.swing.WindowConstants;
  * Luokka hoitaa projektin käyttöliittymä puolen, eli luo halutun alustan sekä
  * tarvittavat napit ja tekstikentät. Luokassa hahmotellaan siis koko
  * käyttöliittymän ulkonäkö ja lisäksi lisätään napeille tapahtumien
- * käsittelijät.
+ * käsittelijä.
  */
 public class Kayttoliittyma implements Runnable {
 
@@ -44,7 +44,7 @@ public class Kayttoliittyma implements Runnable {
 
     /**
      * Metodi luo halutut komponentit, eli napit ja tekstikentät, päättää niiden
-     * järjestyksestä ja lisää napeille tapahtumien käsittelijät.
+     * järjestyksestä ja lisää napeille tapahtumien käsittelijän.
      *
      * @param container komponenttipohja, johon voidaan asettaa haluttu
      * käyttöliittymäasettelija

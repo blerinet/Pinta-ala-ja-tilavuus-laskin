@@ -69,7 +69,7 @@ public class LaskinLogiikka {
      * Metodi laskee annetun kappaleen pinta-alan niin, että aluksi metodi
      * tutkii onko kappale lieriö vai kartio, tämän jälkeen tutkii onko pohjan
      * muoto ympyrä vai neliö ja sitten palauttaa halutun kappalleen pinta-alan
-     * String-muodossa.
+     * double-muodossa.
      *
      * @return halutun kappalleen pinta-ala double-muodossa
      */
