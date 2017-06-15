@@ -119,6 +119,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                     kartio.setEnabled(true);
                     ympyra.setEnabled(false);
                     nelio.setEnabled(false);
+                    laske.setEnabled(false);
                 } else {
                     LaskinLogiikka laskin = new LaskinLogiikka(this.kappale, this.pohjanMuoto, sade, korkeus);
                     String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
@@ -129,6 +130,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                     kartio.setEnabled(true);
                     ympyra.setEnabled(false);
                     nelio.setEnabled(false);
+                    laske.setEnabled(false);
                 }
             } catch (Exception ex) {
                 sadeTaiKanta.setText("");
@@ -138,6 +140,7 @@ public class KlikkaustenKuuntelija implements ActionListener {
                 kartio.setEnabled(true);
                 ympyra.setEnabled(false);
                 nelio.setEnabled(false);
+                laske.setEnabled(false);
             }
         }
     }
