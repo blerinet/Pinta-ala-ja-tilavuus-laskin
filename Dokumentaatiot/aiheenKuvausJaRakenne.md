@@ -7,12 +7,14 @@
 - Kappaleen pohjan muodon valitseminen(ympyrä/neliö)
 - Säteen/kannan ja korkeuden syöttäminen
 
+----
 
 ### Luokkakaavio
 
 ![Luokkakaavio](luokkakaavio.png)
 
 
+----
 
 
 ### Sekvenssikaavio 1
@@ -21,11 +23,16 @@
 
 
 
-### Sekvenssikaavio2
+### Sekvenssikaavio 2
 ![Sekvenssikaavio2](Sekvenssikaavio2.png)
 
 
 
 
-### Sekvenssikaavio3
+### Sekvenssikaavio 3
 ![Sekvenssikaavio3](Sekvenssikaavio3.png)
+
+
+
+### Sekvenssikaavio 4
+![Sekvenssikaavio4](Sekvenssikaavio4.png)
