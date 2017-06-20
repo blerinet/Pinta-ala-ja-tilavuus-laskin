@@ -11,3 +11,4 @@ Päivä | Tunnit | Kuvaus
 09.06.2017 | 5h | Päivittänyt projektin logiikka-osuutta, muokannut testejä, päivittänyt käyttöliittymää sekä luonut tapahtumien käsittelijän, JavaDoc:n aloittaminen sekä pit ja checkstyle raportin generoiminen.
 14.06.2017 | 5h | LaskinLogiikan muuttujien muokkaamista enumeiksi; testien muokkaamista, jotta ne toimivat kun LaskinLogiikassa tapahtui muutoksia; käyttöliittymän muokkaamista ja sen kanssa tappelemista sekä checkstyle- ja pit-raportin generoimista. 
 15.06.2017 | 2h | Projektin koodin siistimistä ja virheiden korjaamista, sekvenssikaavioiden palauttaminen mieleen ja niiden tekeminen
+20.06.2017 | 2h | Netbeans-projektin luokkien muokkaamista siistiimpään kuntoon, HTML javadoc:n generoiminen, jar tiedoston luomista sekä GitHub-releasen luomista
