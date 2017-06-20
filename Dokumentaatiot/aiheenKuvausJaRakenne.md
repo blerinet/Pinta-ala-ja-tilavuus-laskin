@@ -11,7 +11,7 @@
 
 ### Luokkakaavio
 
-![Luokkakaavio](Luokkakaavio.png)
+![Luokkakaavio](luokkakaavio.png)
 
 
 ### Rakennekuvaus
