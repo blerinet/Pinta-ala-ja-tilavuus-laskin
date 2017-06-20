@@ -14,6 +14,12 @@
 ![Luokkakaavio](luokkakaavio.png)
 
 
+### Rakennekuvaus
+
+Projektissani on luotu aluksi jokaiselle mahdolliselle kappalleelle(YmpyralierioLogiikka, YmpyrakartioLogiikka, NelioPohjainenLierioLogiikka ja PyramidiLogiikka) oma luokkansa, jossa hoidetaan pinta-alan ja tilavuuden laskeminen. Sitten on luotu luokka LaskinLogiikka, joka yhdistää kaikki nämä neljä luokkaa yhden kokonaisuuden alle. LaskinLogiikka siis huolehtii laskimen loogisesta puolesta, eli laskee ja palauttaa juuri halutun kappaleen pinta-alan ja tilavuuden, käyttäen apunaan aiemmin luotuja luokkia.
+
+Käyttöliittymä-luokka luo halutun alustan laskimelle, hoitaen vain ainoastaan käyttöliittymä-osuuden, sillä laskimeen liittyvä logiikka hoidetaan muissa luokissa. Klikkausten kuuntelija luokka yhdistää Käyttöliittymän ja laskimen loogisen osuuden yhteen, pitäen ne kuitenkin eroteltuna toisistaan.
+
 ----
 
 
