@@ -93,11 +93,6 @@ public class Kayttoliittyma implements Runnable {
         container.add(kappalePaneeli);
         container.add(paneeli);
         container.add(tulostus);
-
-        ympyra.setEnabled(false);
-        nelio.setEnabled(false);
-        laske.setEnabled(false);
-
     }
 
     public JFrame getFrame() {

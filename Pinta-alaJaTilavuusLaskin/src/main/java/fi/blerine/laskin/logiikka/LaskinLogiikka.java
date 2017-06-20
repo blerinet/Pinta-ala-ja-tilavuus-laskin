@@ -8,8 +8,8 @@ package fi.blerine.laskin.logiikka;
  */
 public class LaskinLogiikka {
 
-    private Kappale kappale;
-    private PohjanMuoto pohjanMuoto;
+    private final Kappale kappale;
+    private final PohjanMuoto pohjanMuoto;
     private double sade;
     private double korkeus;
     private YmpyralierioLogiikka ympyralierio;

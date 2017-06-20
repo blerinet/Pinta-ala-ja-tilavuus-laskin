@@ -5,8 +5,8 @@ package fi.blerine.laskin.logiikka;
  */
 public class YmpyralierioLogiikka {
 
-    private double sade;
-    private double korkeus;
+    private final double sade;
+    private final double korkeus;
 
     /**
      * Konstruktori asettaa käyttäjän syöttämät arvot yksityisten muuttujien

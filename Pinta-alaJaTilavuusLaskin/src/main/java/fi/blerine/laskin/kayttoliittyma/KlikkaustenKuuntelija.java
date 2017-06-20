@@ -75,35 +75,22 @@ public class KlikkaustenKuuntelija implements ActionListener {
             sadeTaiKanta.setText("");
             korkeus.setText("");
             tulostuskentta.setText("0");
-            lierio.setEnabled(true);
-            kartio.setEnabled(true);
-            ympyra.setEnabled(false);
-            nelio.setEnabled(false);
-            laske.setEnabled(false);
+            this.kappale = null;
+            this.pohjanMuoto = null;
         }
         if (e.getSource() == lierio) {
             this.kappale = Kappale.LIERIO;
-            kartio.setEnabled(false);
-            ympyra.setEnabled(true);
-            nelio.setEnabled(true);
         }
 
         if (e.getSource() == kartio) {
-            lierio.setEnabled(false);
-            ympyra.setEnabled(true);
-            nelio.setEnabled(true);
             this.kappale = Kappale.KARTIO;
         }
 
         if (e.getSource() == ympyra) {
             this.pohjanMuoto = PohjanMuoto.YMPYRA;
-            nelio.setEnabled(false);
-            laske.setEnabled(true);
         }
 
         if (e.getSource() == nelio) {
-            ympyra.setEnabled(false);
-            laske.setEnabled(true);
             this.pohjanMuoto = PohjanMuoto.NELIO;
         }
 
@@ -111,36 +98,23 @@ public class KlikkaustenKuuntelija implements ActionListener {
             try {
                 double sade = Double.parseDouble(this.sadeTaiKanta.getText().trim());
                 double korkeus = Double.parseDouble(this.korkeus.getText().trim());
-                if (sade <= 0 || korkeus <= 0) {
+                if (this.kappale == null || this.pohjanMuoto == null) {
+                    tulostuskentta.setText("Valitse sekä kappale, että pohjan muoto.");
+                } else if (sade <= 0 || korkeus <= 0) {
                     tulostuskentta.setText("Säde ja/tai korkeus eivät voi olla negatiivisia tai nolla");
                     sadeTaiKanta.setText("");
                     this.korkeus.setText("");
-                    lierio.setEnabled(true);
-                    kartio.setEnabled(true);
-                    ympyra.setEnabled(false);
-                    nelio.setEnabled(false);
-                    laske.setEnabled(false);
                 } else {
                     LaskinLogiikka laskin = new LaskinLogiikka(this.kappale, this.pohjanMuoto, sade, korkeus);
                     String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
                     tulostuskentta.setText(tulostus);
                     sadeTaiKanta.setText("");
                     this.korkeus.setText("");
-                    lierio.setEnabled(true);
-                    kartio.setEnabled(true);
-                    ympyra.setEnabled(false);
-                    nelio.setEnabled(false);
-                    laske.setEnabled(false);
                 }
             } catch (Exception ex) {
                 sadeTaiKanta.setText("");
                 korkeus.setText("");
                 tulostuskentta.setText("Anna säde ja korkeus senttimetreinä.");
-                lierio.setEnabled(true);
-                kartio.setEnabled(true);
-                ympyra.setEnabled(false);
-                nelio.setEnabled(false);
-                laske.setEnabled(false);
             }
         }
     }

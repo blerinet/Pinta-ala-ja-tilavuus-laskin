@@ -5,8 +5,8 @@ package fi.blerine.laskin.logiikka;
  */
 public class NelioPohjainenLierioLogiikka {
 
-    private double kanta;
-    private double korkeus;
+    private final double kanta;
+    private final double korkeus;
 
     /**
      * Konstruktori asettaa käyttäjän syöttämät arvot yksityisten muuttujien
