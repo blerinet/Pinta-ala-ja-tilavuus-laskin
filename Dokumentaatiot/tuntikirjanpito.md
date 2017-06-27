@@ -13,3 +13,4 @@ Päivä | Tunnit | Kuvaus
 15.06.2017 | 2h | Projektin koodin siistimistä ja virheiden korjaamista, sekvenssikaavioiden palauttaminen mieleen ja niiden tekeminen.
 20.06.2017 | 2h | Netbeans-projektin luokkien muokkaamista siistiimpään kuntoon, HTML javadoc:n generoiminen, jar tiedoston luomista sekä GitHub-releasen luomista.
 20.06.2017 | 4,5h | Sekvenssikaavioiden ja luokkakaavioiden muokkaamista koodia vastaavaksi, rakennekuvauksen sekä käyttöohjeiden kirjoittamista, javadoc:n lisääminen GitHubiin sekä pit- ja checkstyle-raportin generoimista.
+27.06.2017 | 3h | Käyttöliittymän päivittämistä, pit- ja checkstyle-raportin generoimista sekä sekvenssikaavioiden päivittämistä ohjelmaa vastaavaksi
