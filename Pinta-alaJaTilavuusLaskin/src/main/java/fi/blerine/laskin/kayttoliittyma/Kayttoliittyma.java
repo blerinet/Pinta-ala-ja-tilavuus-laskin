@@ -1,5 +1,6 @@
 package fi.blerine.laskin.kayttoliittyma;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -19,9 +20,9 @@ import javax.swing.WindowConstants;
  * käsittelijä.
  */
 public class Kayttoliittyma implements Runnable {
-
+    
     private JFrame frame;
-
+    
     public Kayttoliittyma() {
     }
 
@@ -33,11 +34,11 @@ public class Kayttoliittyma implements Runnable {
     public void run() {
         frame = new JFrame("Pinta-ala ja tilavuus laskin");
         frame.setPreferredSize(new Dimension(1500, 500));
-
+        
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+        
         luoKomponentit(frame.getContentPane());
-
+        
         frame.pack();
         frame.setVisible(true);
     }
@@ -53,12 +54,16 @@ public class Kayttoliittyma implements Runnable {
     private void luoKomponentit(Container container) {
         GridLayout layout = new GridLayout(3, 1);
         container.setLayout(layout);
-
+        
         JPanel kappalePaneeli = new JPanel(new GridLayout(2, 2));
         JButton lierio = new JButton("Lieriö");
+        lierio.setBackground(Color.LIGHT_GRAY);
         JButton kartio = new JButton("Kartio");
+        kartio.setBackground(Color.LIGHT_GRAY);
         JButton ympyra = new JButton("Ympyrä");
+        ympyra.setBackground(Color.LIGHT_GRAY);
         JButton nelio = new JButton("Neliö");
+        nelio.setBackground(Color.LIGHT_GRAY);
         JPanel sadeJaKorkeusPaneeli = new JPanel(new GridLayout(2, 2));
         JPanel paneeli = new JPanel(new GridLayout(1, 2));
         JLabel sadeTaiKantaTeksti = new JLabel("Säde/Kanta senttimetreinä: ");
@@ -66,10 +71,12 @@ public class Kayttoliittyma implements Runnable {
         JLabel korkeusTeksti = new JLabel("Korkeus senttimetreinä: ");
         JTextArea korkeus = new JTextArea();
         JButton nollaus = new JButton("Nollaa kaikki");
+        nollaus.setBackground(Color.LIGHT_GRAY);
         JPanel tulostus = new JPanel(new GridLayout(1, 2));
         JButton laske = new JButton("Laske pinta-ala ja tilavuus");
+        laske.setBackground(Color.LIGHT_GRAY);
         JTextField tulostuskentta = new JTextField("0");
-
+        
         KlikkaustenKuuntelija kuuntelija = new KlikkaustenKuuntelija(sadeTaiKanta, korkeus, nollaus, lierio, kartio, ympyra, nelio, tulostuskentta, laske);
         lierio.addActionListener(kuuntelija);
         kartio.addActionListener(kuuntelija);
@@ -77,7 +84,7 @@ public class Kayttoliittyma implements Runnable {
         nelio.addActionListener(kuuntelija);
         nollaus.addActionListener(kuuntelija);
         laske.addActionListener(kuuntelija);
-
+        
         kappalePaneeli.add(lierio);
         kappalePaneeli.add(kartio);
         kappalePaneeli.add(ympyra);
@@ -94,7 +101,7 @@ public class Kayttoliittyma implements Runnable {
         container.add(paneeli);
         container.add(tulostus);
     }
-
+    
     public JFrame getFrame() {
         return frame;
     }

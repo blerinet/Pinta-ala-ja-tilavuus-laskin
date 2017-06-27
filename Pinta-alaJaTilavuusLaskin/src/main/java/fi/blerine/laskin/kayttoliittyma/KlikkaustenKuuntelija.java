@@ -3,6 +3,7 @@ package fi.blerine.laskin.kayttoliittyma;
 import fi.blerine.laskin.logiikka.Kappale;
 import fi.blerine.laskin.logiikka.LaskinLogiikka;
 import fi.blerine.laskin.logiikka.PohjanMuoto;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -77,21 +78,33 @@ public class KlikkaustenKuuntelija implements ActionListener {
             tulostuskentta.setText("0");
             this.kappale = null;
             this.pohjanMuoto = null;
+            this.lierio.setBackground(Color.LIGHT_GRAY);
+            this.kartio.setBackground(Color.LIGHT_GRAY);
+            this.ympyra.setBackground(Color.LIGHT_GRAY);
+            this.nelio.setBackground(Color.LIGHT_GRAY);
         }
         if (e.getSource() == lierio) {
             this.kappale = Kappale.LIERIO;
+            this.lierio.setBackground(Color.GRAY);
+            this.kartio.setBackground(Color.LIGHT_GRAY);
         }
 
         if (e.getSource() == kartio) {
             this.kappale = Kappale.KARTIO;
+            this.kartio.setBackground(Color.GRAY);
+            this.lierio.setBackground(Color.LIGHT_GRAY);
         }
 
         if (e.getSource() == ympyra) {
             this.pohjanMuoto = PohjanMuoto.YMPYRA;
+            this.ympyra.setBackground(Color.GRAY);
+            this.nelio.setBackground(Color.LIGHT_GRAY);
         }
 
         if (e.getSource() == nelio) {
             this.pohjanMuoto = PohjanMuoto.NELIO;
+            this.nelio.setBackground(Color.GRAY);
+            this.ympyra.setBackground(Color.LIGHT_GRAY);
         }
 
         if (e.getSource() == laske) {
@@ -108,8 +121,6 @@ public class KlikkaustenKuuntelija implements ActionListener {
                     LaskinLogiikka laskin = new LaskinLogiikka(this.kappale, this.pohjanMuoto, sade, korkeus);
                     String tulostus = "Pinta-ala on " + laskin.pintaAla() + " neliösenttimetriä. \n Tilavuus on " + laskin.tilavuus() + " kuutiosenttimetriä.";
                     tulostuskentta.setText(tulostus);
-                    sadeTaiKanta.setText("");
-                    this.korkeus.setText("");
                 }
             } catch (Exception ex) {
                 sadeTaiKanta.setText("");
